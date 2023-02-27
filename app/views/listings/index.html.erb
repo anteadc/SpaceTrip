@@ -1,1 +1,9 @@
-<h1>Banana</h1>
+<h1>Browse trips</h1>
+
+<%= link_to "Create Listing",  new_listing_path %>
+
+<% @listings.each do |listing| %>
+<%= listing.name  %>
+<%= listing.depart_date  %>
+<%= cl_image_tag listing.photo.key, height: 300, width: 400, crop: :fill  %>
+<% end %>
