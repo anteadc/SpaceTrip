@@ -20,7 +20,7 @@ class ListingsController < ApplicationController
     @listing = Listing.new(listing_params)
     @listing.user_id = current_user.id
     @listing.save
-    redirect_to listings
+    redirect_to listings_path
   end
 
   def edit
