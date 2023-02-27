@@ -9,6 +9,11 @@
   <p><%= @listing.capacity  %></p>
   <p><%= @listing.user.last_name  %></p>
 
-  <%= link_to "Back to all listings", listings_path  %>
 
+  <% if current_user.id === @listing.user_id  %>
+    <%= link_to "Edit listing", edit_listing_path  %>
+  <% end %>
+
+  <%= link_to "Back to all listings", listings_path  %>
+  <%= link_to "Book now", listing_bookings_path(@listing), data: {turbo_method: :post }%>
 </div>

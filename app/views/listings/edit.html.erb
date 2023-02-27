@@ -1,0 +1,13 @@
+
+<%= simple_form_for(@listing) do |f| %>
+  <%= f.input :photo, as: :file %>
+  <%= f.input :name %>
+  <%= f.input :rating %>
+  <%= f.input :description %>
+  <%= f.input :short_description %>
+  <%= f.input :price %>
+  <%= f.input :depart_date, as: :date, html5: true %>
+  <%= f.input :duration %>
+  <%= f.input :capacity %>
+  <%= f.submit %>
+<% end %>
