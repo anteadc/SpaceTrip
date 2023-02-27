@@ -1,9 +1,25 @@
-<h1>Browse trips</h1>
+<div class="container">
 
-<%= link_to "Create Listing",  new_listing_path %>
+  <h1>Browse trips</h1>
 
-<% @listings.each do |listing| %>
-<%= listing.name  %>
-<%= listing.depart_date  %>
-<%= cl_image_tag listing.photo.key, height: 300, width: 400, crop: :fill  %>
-<% end %>
+  <%= link_to "Create Listing",  new_listing_path %>
+
+  <% @listings.each do |listing| %>
+
+    <div class="card-listing">
+
+    <%= cl_image_tag listing.photo.key, height: 300, width: 400, crop: :fill  %>
+      <p><strong><%= listing.name  %></strong></p>
+      <p><%= listing.rating  %>/5 ⭐️</p>
+      <p>Short description: <%= listing.short_description  %></p>
+      <p>Price per person: <%= listing.price  %>£</p>
+      <p>Departure date: <%= listing.depart_date  %></p>
+      <p>Max capacity of the spacecraft: <%= listing.capacity  %></p>
+      <p>Listed by: <%= listing.user.last_name  %></p>
+      <%= link_to "Show more", listing_path(listing)  %>
+    </div>
+
+  <% end %>
+
+
+</div>

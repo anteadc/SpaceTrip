@@ -1,0 +1,14 @@
+<div class="container">
+
+  <%= cl_image_tag @listing.photo.key, height: 300, width: 400, crop: :fill  %>
+  <p><%= @listing.name  %></p>
+  <p><%= @listing.rating  %></p>
+  <p><%= @listing.description  %></p>
+  <p><%= @listing.price  %></p>
+  <p><%= @listing.depart_date  %></p>
+  <p><%= @listing.capacity  %></p>
+  <p><%= @listing.user.last_name  %></p>
+
+  <%= link_to "Back to all listings", listings_path  %>
+
+</div>
