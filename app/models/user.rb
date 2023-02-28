@@ -8,4 +8,12 @@ class User < ApplicationRecord
   has_many :listings, through: :bookings
   has_many :listings
 
+  validates :first_name, presence: { message: "First Name cannot be blank" }
+  validates :last_name, presence: { message: "Last Name cannot be blank" }
+  # has_secure_password
+  # PASSWORD_FORMAT = /\A
+  # (?=.*\d)           # at least one digit
+  # \z/x
+  # validates :password, presence: true, format: { with: PASSWORD_FORMAT }
+  validates :email, presence: true, uniqueness: true
 end
