@@ -15,7 +15,10 @@
       <p>Price per person: <%= listing.price  %>£</p>
       <p>Departure date: <%= listing.depart_date  %></p>
       <p>Max capacity of the spacecraft: <%= listing.capacity  %></p>
-      <p>Listed by: <%= listing.user  %></p>
+      <p>Listed by: <%= listing.user.last_name %></p>
+
+      <p><%= listing.features %></p>
+
       <%= link_to "Show more", listing_path(listing)  %>
     </div>
 

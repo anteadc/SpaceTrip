@@ -7,10 +7,12 @@
   <%= f.input :name %>
   <%= f.input :rating %>
   <%= f.input :description %>
+  <%= f.input :launch_site, as: :select, collection: Listing::ALLOWED_LOCATIONS %>
   <%= f.input :short_description %>
   <%= f.input :price %>
   <%= f.input :depart_date, as: :date, html5: true %>
   <%= f.input :duration %>
   <%= f.input :capacity %>
+  <%= f.input :features, as: :check_boxes, collection: Listing::FEATURES %>
   <%= f.submit %>
 <% end %>

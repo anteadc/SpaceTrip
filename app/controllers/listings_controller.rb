@@ -17,10 +17,16 @@ class ListingsController < ApplicationController
   end
 
   def create
-    @listing = Listing.new(listing_params)
-    @listing.user_id = current_user.id
-    @listing.save
-    redirect_to listings_path
+    permitted_params = listing_params
+    permitted_params[:features] = permitted_params[:features].compact_blank
+    @listing = Listing.new(permitted_params)
+    @listing.user = current_user
+
+    if @listing.save
+      redirect_to listings_path
+    else
+      render 'listings/new', status: :unprocessable_entity
+    end
   end
 
   def edit
@@ -28,7 +34,8 @@ class ListingsController < ApplicationController
   end
 
   private
+
   def listing_params
-    params.require(:listing).permit(:name, :photo, :rating, :description, :short_description, :price, :depart_date, :duration, :capacity)
+    params.require(:listing).permit(:name, :photo, :rating, :description, :short_description, :price, :depart_date, :duration, :capacity, :launch_site, features: [])
   end
 end
