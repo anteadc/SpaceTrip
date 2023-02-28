@@ -5,6 +5,10 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require 'open-uri'
+
+Listing.destroy_all
+User.destroy_all
 
 
 puts "seeding"
@@ -21,11 +25,11 @@ list3 = Listing.create!(name: "SpaceCowboy", launch_site: "Corn Ranch,Texas, Uni
 puts "created listing"
 puts "attaching photos"
 
-list1.photo.attach(io: File.open('app/assets/images/ship1.png'), filename: 'ship1.png', content_type: 'image/png')
+list1.photo.attach(io: File.open(URI.open('https://res.cloudinary.com/dxgkclowd/image/upload/v1677575677/ship1.jpg')), filename: 'ship1.png', content_type: 'image/png')
 
-list2.photo.attach(io: File.open('app/assets/images/ship2.png'), filename: 'ship2.png', content_type: 'image/png')
+list2.photo.attach(io: File.open(URI.open('https://res.cloudinary.com/dxgkclowd/image/upload/v1677575677/ship3.avif')), filename: 'ship2.png', content_type: 'image/png')
 
-list3.photo.attach(io: File.open('app/assets/images/ship3.png'), filename: 'ship3.png', content_type: 'image/png')
+list3.photo.attach(io: File.open(URI.open('https://res.cloudinary.com/dxgkclowd/image/upload/v1677575677/ship2.avif')), filename: 'ship3.png', content_type: 'image/png')
 
 puts "photos attached"
 puts "done"
