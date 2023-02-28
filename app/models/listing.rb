@@ -6,9 +6,9 @@ class Listing < ApplicationRecord
 
   ALLOWED_LOCATIONS = [
     "Baikonur Cosmodrome,Kazakhstan (Soviet and Russian flights)",
-    "Cape Canaveral Space Force Station,Florida, United States ",
-    "Jiuquan Satellite Launch Center,China ",
-    "Corn Ranch,Texas, United States ",
+    "Cape Canaveral Space Force Station,Florida, United States",
+    "Jiuquan Satellite Launch Center,China",
+    "Corn Ranch,Texas, United States",
     "Russia Kapustin Yar Cosmodrome, Astrakhan Oblast, Russia",
     "San Marco platform, Broglio Space Centre, Malindi, Kenya",
     "Hammaguir French Special Weapons Test Centre, Algeria",
@@ -21,6 +21,8 @@ class Listing < ApplicationRecord
     "Wenchang Satellite Launch Center, China ",
     "Woomera Prohibited Area, South Australia"
   ]
+
+  FEATURES = ["Wifi", 'Gym', 'Entertainment', 'Spa', 'Quantum Hyperspace Drive', 'Zero-Gravity Spa', 'Artificial Intelligence Butler', 'Holographic Entertainment Suite', 'Space Garden', 'Personalized Atmosphere Control', 'Anti-Gravity Gym', 'Quantum-Entangled Teleportation', 'Infrared Sauna', 'Gravity Defying Infinity Pool', 'Bananas']
 
   validates :name, presence: true
   validates :description, presence: true, length: { minimum: 30 }
