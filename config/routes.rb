@@ -2,8 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
 
   root to: "listings#home"
-  get "/bookings", to: "bookings#index"
+  get "/dashboard", to: "pages#dashboard"
+  get "/faq", to: "pages#faq"
+  get "/testimonials", to: "pages#testimonials"
+
   resources :listings do
-    resources :bookings, except: [:index]
+    resources :bookings, only: [:create]
   end
 end
