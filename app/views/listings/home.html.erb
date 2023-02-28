@@ -1,8 +1,22 @@
-<h1>Welcome to SpaceTrip</h1>
-<p>Have a nice trip</p>
+<div class="main-banner">
+    <div class="titles-banner">
+      <h1 class="main-banner-h1">SpaceTrip - Experience the Ultimate Adventure</h1>
+      <h2>Book Your Journey to the Stars</h2>
+    </div>
+    
+    <%= link_to "Register!", new_user_registration_path, class: "button-red"%>
+    <%= link_to "Login!", new_user_session_path, class: "button-red"  %>
+</div>
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap');
-</style>
-<%= link_to "Register!", new_user_registration_path, class: "button-red"  %>
-<%= link_to "Login!", new_user_session_path, class: "button-red"  %>
+<div class="container">
+  <div class="infos-main">
+    <div class="infos-main-img">
+      <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1511&q=80" alt="Space">
+    </div>
+
+    <div class="main-description">
+      <h2>What is SpaceTrip?</h2>
+      <p>SpaceTrip is a space travel booking platform that allows you to book your journey to the stars. We offer a wide range of destinations and packages to suit your needs. We also offer a wide range of activities to do once you arrive at your destination. We are the best space travel booking platform in the world.</p>
+    </div>
+  </div>
+</div>
