@@ -23,12 +23,55 @@ h1, h2 {
 }
 
 .main-banner {
-  background-image: url("banner.jpg");
+  background-image: url("banner2.png");
   background-size: cover;
   background-position: center;
   display: flex;
+  flex-direction: column;
   height: 80vh;
   width: 100%;
   justify-content: center;
   align-items: center;
+}
+
+.titles-banner{
+  margin-bottom: 40px;
+}
+
+.secondary-banner {
+  background-image: url("secondary-banner.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.section {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 600px;
+  width: 100%;
+}
+
+.section-img {
+  background-image: url("banner.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 500px;
+  height: 400px;
+}
+
+.section-text {
+  width: 500px;
+  height: 400px;
+  justify-content: left;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
