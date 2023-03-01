@@ -13,11 +13,13 @@
       <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
     </div>
 
+
     <div class="form-actions text-center" style="margin-left:260px;">
       <%= f.button :submit, "Sign in", class: "button-red" %>
     </div>
     <br>
   <% end %>
+
 
   <%= render "devise/shared/links" %>
 </div>
