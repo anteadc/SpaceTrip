@@ -9,7 +9,7 @@ require 'open-uri'
 
 Listing.destroy_all
 User.destroy_all
-
+Booking.destroy_all
 
 puts "seeding"
 puts "creating 4 user"
