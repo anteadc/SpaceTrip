@@ -27,7 +27,7 @@ class Listing < ApplicationRecord
   validates :name, presence: true
   validates :description, presence: true, length: { minimum: 30 }
   validates :price, presence: true, numericality: { greater_than: 0 }
-  validates :short_description, presence: true, length: { maximum: 30 }
+  validates :short_description, presence: true, length: { maximum: 50 }
   validates :launch_site, presence: true, inclusion: { in: ALLOWED_LOCATIONS }
   validates :capacity, presence: true
 end
