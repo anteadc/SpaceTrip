@@ -26,6 +26,15 @@
 
   <%= link_to "Back to all listings", listings_path  %>
   <div class="button-red">
-   <%= link_to "Book now", listing_bookings_path(@listing), data: {turbo_method: :post, turbo_confirm: "Confirm booking?" }%>
+   <%= link_to "Book now", listing_bookings_path(@listing), data: {turbo_method: :post, turbo_confirm: "Confirm booking?" }, class: "button-red"%>
+  </div>
+
+  <div class="listing-map mt-4">
+    <div class="listing-map-title mb-4">
+      <p><strong>Where you will be taking off from</strong></p>
+    </div>
+    <div class="listing-map-container">
+
+    </div>
   </div>
 </div>

@@ -4,10 +4,12 @@
 
 @font-face {
   font-family: "Exo Space";
-  src: asset-url('fonts/exo-space.ttf') format('truetype')
+  src: asset-url('fonts/exo-space.ttf'), format('truetype')
 }
-// Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Exo Space", "Helvetica", "sans-serif";
+
+
+// // Define fonts for body and headers
+$body-font: "Space Grotesk", "Helvetica", "sans-serif";
+$headers-font: "Exo Space", "Helvetica", "Arial", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
