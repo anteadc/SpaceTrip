@@ -3,11 +3,16 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new
     @booking.user_id = current_user.id
-    @booking.listing_id = params[:listing_id]
+    @listing = Listing.find(params[:listing_id])
+    @booking.listing = @listing
     @booking.status = "unconfirmed"
     @booking.save
-    redirect_to listings_path
-    flash[:notice] = "Booking request sent"
+    redirect_to listing_booking_path(@listing, @booking)
+  end
+
+  def show
+    @booking = Booking.find(params[:id])
+    @listing = Listing.find(params[:listing_id])
   end
 
   private
