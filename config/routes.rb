@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   get "/testimonials", to: "pages#testimonials"
 
   resources :listings do
-    resources :bookings, only: [:create]
+    resources :bookings, only: [:create, :show]
   end
 end
