@@ -7,6 +7,7 @@ class BookingsController < ApplicationController
     @booking.status = "unconfirmed"
     @booking.save
     redirect_to listings_path
+    flash[:notice] = "Booking request sent"
   end
 
   private

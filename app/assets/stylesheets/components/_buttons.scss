@@ -1,20 +1,35 @@
 .button-red {
-    height: 30px;
-    color: $secondary;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 25px;
-    padding-right: 25px;
-    border-radius: 10px;
-    background-color: $primary;
-    text-decoration: none;
-    font-family: Space Grotesk, sans-serif; /* install file for letterrype */
-    font-size: 18px;
-  }
-.nav-button{
-  background-color: #FF0000;
-  padding: 1px 7px;
-  border-radius: $border-radius;
-  margin-right: 16px;
+  height: 45px;
+  color: #ffffff;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-radius: 10px;
+  /* text-shadow: 10px 10px 20px rgb(255 0 0); */
+  box-shadow: 0px 0px 10px 0px $primary;
+  border: solid 3px $primary;
+  display: flex;
+  text-decoration: none;
+  font-family: Space Grotesk, sans-serif;
+  font-size: 18px;
+  align-items: center;
+  background-color: #00340694;
+  transition: ease 0.3s;
 
 }
+
+.button-red:hover {
+  background-color: #007d0f94;
+  color: #ffffff;
+  border: solid 3px #007d0f;
+
+  transition: ease 0.3s;
+}
+
+.nav-button {
+  background-color: $primary;
+  padding: 3px 15px;
+  border-radius: 10px;
+  margin-right: 16px;
+}
+
+// #4ed262
