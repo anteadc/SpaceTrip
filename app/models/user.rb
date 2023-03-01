@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :listings, through: :bookings
   has_many :listings
+  has_one_attached :photo
 
   validates :first_name, presence: { message: "First Name cannot be blank" }
   validates :last_name, presence: { message: "Last Name cannot be blank" }
