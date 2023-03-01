@@ -10,5 +10,9 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-@import "components/dashboard"
+@import "components/dashboard";
 // Icons
+
+label {
+  color: white;
+}

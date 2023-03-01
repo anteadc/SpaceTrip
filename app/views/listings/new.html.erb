@@ -1,5 +1,5 @@
 
-
+<div class="container">
 <h1>New Listing</h1>
 
 <%= simple_form_for(@listing) do |f| %>
@@ -16,3 +16,4 @@
   <%= f.input :features, as: :check_boxes, collection: Listing::FEATURES %>
   <%= f.submit %>
 <% end %>
+</div>
