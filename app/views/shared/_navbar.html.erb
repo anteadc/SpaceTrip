@@ -1,4 +1,4 @@
-<div class="navbar navbar-omar border_colour align-items-center bg-dark">
+<div class="navbar navbar-omar align-items-center bg-dark">
   <div class="container-fluid">
     <%= link_to listings_path ,class: "navbar-brand align-items-center" do %>
       <%= image_tag "SPACETRIP.svg" %>
@@ -13,22 +13,25 @@
         <% if user_signed_in? %>
 
           <li class="nav-item active">
-             <%= current_user.last_name %>
+            <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
 
           <li class="nav-item nav-button ">
             <%= link_to "Trips",  listings_path, class: "nav-link" %>
           </li>
 
-          <li class="nav-item active">
-            <%= link_to "Home", root_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "FAQ",  faq_path, class: "nav-link" %>
-          </li>
           <li class="nav-item">
             <%= link_to "Testimonials",  testimonials_path, class: "nav-link" %>
           </li>
+
+          <li class="nav-item">
+            <%= link_to "FAQ",  faq_path, class: "nav-link" %>
+          </li>
+
+          <li class="nav-item active">
+             <%= current_user.last_name %>
+          </li>
+
           <li class="nav-item dropdown">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
