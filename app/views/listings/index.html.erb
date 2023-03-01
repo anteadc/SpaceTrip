@@ -6,7 +6,7 @@
 
   <% @listings.each do |listing| %>
 
-    <div class="card-listing">
+  <div class="card-listing">
 
     <%= cl_image_tag listing.photo.key, height: 300, width: 400, crop: :fill  %>
       <p><strong><%= listing.name  %></strong></p>
@@ -23,6 +23,5 @@
     </div>
 
   <% end %>
-
 
 </div>
