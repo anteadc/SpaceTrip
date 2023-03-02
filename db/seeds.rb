@@ -14,9 +14,9 @@ User.destroy_all
 
 puts "seeding"
 puts "creating 4 user"
-jeff = User.create(first_name: "Jeff", last_name: "Bezos", email: "jeff@gmail.com", password: "123456")
-richard = User.create(first_name: "Richard", last_name: "Branson", email: "richard@gmail.com", password: "123456")
-elon = User.create(first_name: "Elon", last_name: "Musk", email: "elon@gmail.com", password: "123456")
+jeff = User.create(first_name: "Jeff", last_name: "Bezos", email: "jeff@gmail.com", bio: "Jeff enjoys long walks on his private island, counting his money, and practicing his villainous monologue in front of the mirror. He's also a big fan of hair gel. Despite his immense wealth and power, Jeff remains humble and down-to-earth. He's just a regular guy who happens to have more money than most countries. No big deal.", password: "123456")
+richard = User.create(first_name: "Richard", last_name: "Branson", email: "richard@gmail.com", bio: "Famous for inventing nothing new and tring to put the great back in 'Great Britain'. He's famous for his trademark flowing blond locks and his affinity for crazy stunts, like hot air ballooning across the Atlantic or dressing up as a flight attendant and serving drinks on one of his planes.", password: "123456")
+elon = User.create(first_name: "Elon", last_name: "Musk", email: "elon@gmail.com", bio: "When he's not launching Teslas into space, he can be found tweeting about Dogecoin and wearing his favorite 'Mars or Bust' t-shirt. In his spare time, Musk enjoys developing new AI technology and pondering the meaning of life on Mars. If you ever run into Elon Musk, be sure to ask him about his favorite Pokemon or how he plans to defeat the alien invasion.", password: "123456")
 puts "creaed 4 user"
 
 puts "creating listings"
