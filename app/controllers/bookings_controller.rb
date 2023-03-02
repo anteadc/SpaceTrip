@@ -16,19 +16,17 @@ class BookingsController < ApplicationController
   end
 
   def update
-   @booking = Booking.find(params[:id])
+    @booking = Booking.find(params[:id])
 
-   if params[:status] === "confirmed"
-      @booking.status = "confirmed"
-      @booking.save
-      redirect_to requests_path
-
-   elsif params[:status] === "declined"
-      @booking.status = "declined"
-      @booking.save
-
-      redirect_to requests_path
-   end
+  if params[:status] == "confirmed"
+    @booking.status = "confirmed"
+    @booking.save
+    redirect_to requests_path
+  elsif params[:status] == "declined"
+    @booking.status = "declined"
+    @booking.save
+    redirect_to requests_path
+  end
 
 
   end
