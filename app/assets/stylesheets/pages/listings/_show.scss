@@ -3,7 +3,8 @@
 // }
 .listing-title-infos {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
+
 }
 
 .listing-title-infos p {
@@ -28,9 +29,29 @@ margin: 0 auto;
   background-image: url("map.png");
   background-size: cover;
   background-position: center;
+
 }
 
+.photo-hero {
+  width: 100%;
+  height: auto;
+}
 
+.show-booking-card {
+  background-color: #272727;
+  box-shadow: 0 0 4px $green;
+  border-radius: 5px;
+  border:  solid $green 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+ul li {
+  color: white;
+}
 
 // h1, h2 {
 //   text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
