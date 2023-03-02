@@ -16,5 +16,9 @@ class PagesController < ApplicationController
     @bookings = Booking.where(user_id: current_user.id)
 
   end
+  def payment
+
+
+  end
 
 end
