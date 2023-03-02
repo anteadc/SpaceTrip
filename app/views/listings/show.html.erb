@@ -47,11 +47,16 @@
     </div>
   </div>
 
-  <ul>
-    <% @listing.features.each do |feature| %>
-      <li><i class="fas fa-check-circle"></i><%= feature %></li>
-    <% end %>
-  </ul>
+  <% @icon_names = ["user-astronaut", "rocket", "satellite", "star", "meteor", "globe", "carrot", "rocket", "satellite", "robot", "meteor", "globe", "satellite", "star", "meteor", "globe"] %>
+
+
+  <div class="col-8">
+    <ul class="list-features">
+      <% @listing.features.each_with_index do |feature, index| %>
+        <li><i class="mr-1 fas fa-<%= @icon_names[index % @icon_names.size] %>"></i>  <%= feature %></li>
+      <% end %>
+    </ul>
+  </div>
 
   <div class="listing-map mt-4">
     <div class="listing-map-title mb-4">
