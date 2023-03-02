@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get "/requests", to: "pages#requests"
   get "/faq", to: "pages#faq"
   get "/testimonials", to: "pages#testimonials"
+  get "/payment", to: "pages#payment"
 
   resources :listings do
     resources :bookings, only: [:create, :show]
