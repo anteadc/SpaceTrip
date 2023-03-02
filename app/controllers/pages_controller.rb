@@ -12,4 +12,9 @@ class PagesController < ApplicationController
 
   end
 
+  def requests
+    @bookings = Booking.where(user_id: current_user.id)
+
+  end
+
 end

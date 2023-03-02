@@ -10,6 +10,13 @@ class ListingsController < ApplicationController
 
   def show
     @listing = Listing.find(params[:id])
+    if @listing.geocoded?
+      @marker =
+        {
+          lat: @listing.latitude,
+          lng: @listing.longitude
+        }
+    end
   end
 
   def new
@@ -36,6 +43,6 @@ class ListingsController < ApplicationController
   private
 
   def listing_params
-    params.require(:listing).permit(:name, :photo, :rating, :description, :short_description, :price, :depart_date, :duration, :capacity, :launch_site, features: [])
+    params.require(:listing).permit(:status, :name, :photo, :rating, :description, :short_description, :price, :depart_date, :duration, :capacity, :launch_site, features: [])
   end
 end

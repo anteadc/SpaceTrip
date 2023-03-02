@@ -30,4 +30,8 @@ class Listing < ApplicationRecord
   validates :short_description, presence: true, length: { maximum: 50 }
   validates :launch_site, presence: true, inclusion: { in: ALLOWED_LOCATIONS }
   validates :capacity, presence: true
+
+  geocoded_by :launch_site
+  after_validation :geocode, if: :will_save_change_to_launch_site?
+
 end
