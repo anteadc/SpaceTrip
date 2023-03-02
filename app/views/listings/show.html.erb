@@ -19,10 +19,16 @@
       </div>
   </div>
 
+
   <div class="row listings-image">
     <div class="col-12">
+    <% if @listing.photo.attached? %>
     <%= cl_image_tag @listing.photo.key, class:"photo-hero" %>
+    <% else %>
+    <%= image_tag "banana.jpg", class:"photo-hero" %>
+    <% end %>
     </div>
+
   </div>
 
 <%# ==== Decription on left of large screen, infos + booking on the right  ====  %>
