@@ -27,6 +27,7 @@ class ListingsController < ApplicationController
     permitted_params = listing_params
     permitted_params[:features] = permitted_params[:features].compact_blank
     @listing = Listing.new(permitted_params)
+    raise
     @listing.user = current_user
 
     if @listing.save
@@ -43,6 +44,6 @@ class ListingsController < ApplicationController
   private
 
   def listing_params
-    params.require(:listing).permit(:name, :photo, :rating, :description, :short_description, :price, :depart_date, :duration, :capacity, :launch_site, features: [])
+    params.require(:listing).permit(:status, :name, :photo, :rating, :description, :short_description, :price, :depart_date, :duration, :capacity, :launch_site, features: [])
   end
 end
