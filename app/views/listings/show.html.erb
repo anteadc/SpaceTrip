@@ -4,9 +4,9 @@
   </div>
 
   <div class="listing-title-infos">
-      <p><i class="fas fa-star"></i> <%= @listing.rating  %></p>
-      <p><i class="fas fa-users"></i> <%= @listing.capacity  %></p>
-      <p><i class="fas fa-broom"></i> <%= @listing.depart_date  %></p>
+    <p><i class="fas fa-star"></i> <%= @listing.rating  %></p>
+    <p><i class="fas fa-users"></i> <%= @listing.capacity  %></p>
+    <p><i class="fas fa-broom"></i> <%= @listing.depart_date  %></p>
   </div>
 
   <div class="listings-image">
@@ -25,14 +25,13 @@
   <% end %>
 
   <%= link_to "Back to all listings", listings_path  %>
-  <div class="button-red">
-   <%= link_to "Book now", listing_bookings_path(@listing), data: {turbo_method: :post, turbo_confirm: "Confirm booking?" }, class: "button-red"%>
-  </div>
+  <%= link_to "Book now", listing_bookings_path(@listing), data: {turbo_method: :post}, class: "button-red"%>
+
+
   <div class="listing-map mt-4">
     <div class="listing-map-title mb-4">
       <p><strong>Where you will be taking off from</strong></p>
     </div>
-
   </div>
 
   <div style="width: 100%; height: 600px;"
