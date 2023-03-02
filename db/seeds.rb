@@ -7,9 +7,10 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'open-uri'
 
+Booking.destroy_all
 Listing.destroy_all
 User.destroy_all
-Booking.destroy_all
+
 
 puts "seeding"
 puts "creating 4 user"
