@@ -35,6 +35,15 @@
                         label: false,
                         placeholder: "Email" %>
           </div>
+          <div class="no-margin">
+           <%= f.input :bio,
+                        as: :text,
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "bio" },
+                        label: false,
+                        placeholder: "Bio" %>
+          </div>
             <div class="col-md-6 no-margin">
               <%= f.input :password,
                           required: true,

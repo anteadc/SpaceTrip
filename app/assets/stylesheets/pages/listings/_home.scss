@@ -89,6 +89,20 @@ h1, h2 {
 }
 
 .green-arrow {
-  position: relative;
-  top: 180px;
+  position: absolute;
+  top: 50%;
+  animation: updown 1.5s ease-in-out infinite;
+  scale: 0.55;
+}
+
+@keyframes updown {
+  0% {
+    top: 60%;
+  }
+  50% {
+    top: 61%;
+  }
+  100% {
+    top: 60%;
+  }
 }
