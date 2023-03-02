@@ -10,6 +10,13 @@ class ListingsController < ApplicationController
 
   def show
     @listing = Listing.find(params[:id])
+    if @listing.geocoded?
+      @marker =
+        {
+          lat: @listing.latitude,
+          lng: @listing.longitude
+        }
+    end
   end
 
   def new
