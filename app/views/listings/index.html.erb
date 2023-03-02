@@ -12,7 +12,13 @@
             <div class="cards-container">
 
               <div class="hover-card">
+
+                <% if listing.photo.attached? %>
                 <%= cl_image_tag listing.photo.key ,class: "image" %>
+                <% else %>
+                <%= image_tag "banana.jpg", class: "image" %>
+                <% end  %>
+
                 <p class="hidden-text"><%= listing.short_description %></p>
               </div>
 
