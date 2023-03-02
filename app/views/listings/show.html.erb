@@ -28,7 +28,6 @@
   <div class="button-red">
    <%= link_to "Book now", listing_bookings_path(@listing), data: {turbo_method: :post, turbo_confirm: "Confirm booking?" }, class: "button-red"%>
   </div>
-
   <div class="listing-map mt-4">
     <div class="listing-map-title mb-4">
       <p><strong>Where you will be taking off from</strong></p>
@@ -41,5 +40,6 @@
     data-map-marker-value="<%= @marker.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
+
 
 </div>
