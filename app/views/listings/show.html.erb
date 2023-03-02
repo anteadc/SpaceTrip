@@ -10,7 +10,11 @@
   </div>
 
   <div class="listings-image">
+    <% if @listing.photo.attached? %>
     <%= cl_image_tag @listing.photo.key, height: 300, width: 400, crop: :fill  %>
+    <% else %>
+    <%= image_tag "banana.jpg", height: 300, width: 400, crop: :fill %>
+    <% end %>
   </div>
 
   <div class="listing-description-card mt-4">
