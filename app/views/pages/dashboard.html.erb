@@ -1,16 +1,22 @@
 
 
 <div class="main-banner2">
+
+    <% if  !@bookings.empty?%>
+
     <div class="titles-banner">
         <% if @bookings.first.status === "confirmed" %>
       <h1 class="main-banner-h1 text-center">Congratulations!</h1>
+      <h2 class="main-banner-h1 text-center"> <%= @bookings.first.listing.user.first_name + " " + @bookings.first.listing.user.last_name%> has accepted you booking. Please pay.</h2>
         <% elsif @bookings.first.status === "declined" %>
       <h1 class="main-banner-h1 text-center">Bananas, you hve been denied :|</h1>
-        <% else @bookings.first.status === "unconfirmed" %>
-      <h1 class="main-banner-h1 text-center">Waiting for <% @bookings.first.listing.user.first_name + " " + @bookings.first.listing.user.last_name%> to confirm your booking.</h1>
-        <% end %>
+        <% elsif @bookings.first.status === "unconfirmed" %>
+      <h1 class="main-banner-h1 text-center">Waiting for <%= @bookings.first.listing.user.first_name + " " + @bookings.first.listing.user.last_name%> to confirm your booking.</h1>
+      <% else %>
+        <h1 class="main-banner-h1 text-center">You are ready! Don't forget your travel insurance.</h1>
+      <% end %>
 
-      <h2 class="main-banner-h1 text-center"> You are all set up for the biggest adventure of your life</h2>
+
       <div class="booking-item">
         <p>Booked by: <%= @bookings.last.user.first_name + " " + @bookings.last.user.last_name%></p>
         <p>Trip Name: <%= @bookings.last.listing.name %></p>
@@ -23,4 +29,5 @@
         <% end %></p>
       </div>
     </div>
+    <% end %>
 </div>

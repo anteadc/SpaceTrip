@@ -23,6 +23,8 @@ class PagesController < ApplicationController
   end
 
   def paymentdone
-
+    @booking = Booking.where(user_id: current_user.id)
+    @booking[0].status = "paid"
+    @booking[0].save
   end
 end
