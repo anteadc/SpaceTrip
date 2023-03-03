@@ -67,8 +67,12 @@
 
 
     <div class="col-4">
-       <%= cl_image_tag current_user.photo.key, class:"avatar" %>
-      <p><%= current_user.bio %></p>
+      <% if current_user.photo.attached? %>
+       <%= cl_image_tag @listing.user.photo.key, class:"avatar" %>
+      <% else %>
+        <%= cl_image_tag @listing.user.photo.key, class:"avatar" %>
+      <% end %>
+      <p><%= @listing.user.bio %></p>
 
     </div>
   </div>
