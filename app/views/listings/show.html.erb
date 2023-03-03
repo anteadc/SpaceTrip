@@ -32,31 +32,47 @@
   </div>
 
 <%# ==== Decription on left of large screen, infos + booking on the right  ====  %>
-  <div class="row">
-    <div class="col-8">
-      <div class="listing-description-card mt-4">
-        <p><i class="fas fa-info"></i>  <%= @listing.description  %></p>
-      </div>
+
+  <% @icon_names = ["user-astronaut", "rocket", "satellite", "star", "meteor", "globe", "carrot", "rocket", "satellite", "robot", "meteor", "globe", "satellite", "star", "meteor", "globe"] %>
+
+
+  <div class="row mt-5">
+  <div class="col-8">
+      <ul class="list-features">
+        <% @listing.features.each_with_index do |feature, index| %>
+          <li><i class="mr-1 fas fa-<%= @icon_names[index % @icon_names.size] %>"></i>  <%= feature %></li>
+        <% end %>
+      </ul>
     </div>
 
+
     <div class="col-4">
-        <div class="card show-booking-card mt-4">
+        <div class="card show-booking-card mt-2">
           <p><strong>Total cost: $US <%= @listing.price  %></strong></p>
           <%= link_to "Book now", listing_bookings_path(@listing), data: {turbo_method: :post}, class: "button-red"%>
         </div>
     </div>
   </div>
 
-  <% @icon_names = ["user-astronaut", "rocket", "satellite", "star", "meteor", "globe", "carrot", "rocket", "satellite", "robot", "meteor", "globe", "satellite", "star", "meteor", "globe"] %>
+
+  <div class="row mt-5">
 
 
-  <div class="col-8">
-    <ul class="list-features">
-      <% @listing.features.each_with_index do |feature, index| %>
-        <li><i class="mr-1 fas fa-<%= @icon_names[index % @icon_names.size] %>"></i>  <%= feature %></li>
-      <% end %>
-    </ul>
+<div class="col-8">
+      <div class="listing-description-card mt-4">
+        <p><i class="fas fa-info"></i>  <%= @listing.description  %></p>
+      </div>
+    </div>
+
+
+
+    <div class="col-4">
+       <%= cl_image_tag current_user.photo.key, class:"avatar" %>
+      <p><%= current_user.bio %></p>
+
+    </div>
   </div>
+
 
   <div class="listing-map mt-4">
     <div class="listing-map-title mb-4">
