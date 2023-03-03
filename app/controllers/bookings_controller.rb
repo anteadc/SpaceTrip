@@ -3,11 +3,22 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new
     @booking.user_id = current_user.id
+
     @listing = Listing.find(params[:listing_id])
-    @booking.listing = @listing
-    @booking.status = "unconfirmed"
-    @booking.save
-    redirect_to dashboard_path
+      if @listing.capacity.positive?
+      @listing.capacity -= 1
+      @listing.save
+
+      @booking.listing = @listing
+      @booking.status = "unconfirmed"
+      @booking.save
+      redirect_to dashboard_path
+      else
+        flash.now[:error] = "Bananas, its fully booked!"
+        render "listings/show", status: :unprocessable_entity
+
+      end
+
   end
 
   def show

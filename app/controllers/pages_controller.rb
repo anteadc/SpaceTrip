@@ -13,7 +13,8 @@ class PagesController < ApplicationController
   end
 
   def requests
-    @bookings = Booking.where(user_id: current_user.id)
+
+    @bookings = Booking.joins(listing: :user).where(users: { id: current_user })
 
   end
   def payment

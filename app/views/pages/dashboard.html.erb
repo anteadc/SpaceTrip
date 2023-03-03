@@ -4,28 +4,23 @@
     <div class="titles-banner">
         <% if @bookings.first.status === "confirmed" %>
       <h1 class="main-banner-h1 text-center">Congratulations!</h1>
-      <h2 class="main-banner-h1 text-center"> You are all set up for the biggest adventure of your life</h2>
-
         <% elsif @bookings.first.status === "declined" %>
-      <h1 class="main-banner-h1 text-center">Bananas, you have been denied :|</h1>
-
-        <% elsif @bookings.first.status === "unconfirmed" %>
-      <h1 class="main-banner-h1 text-center">Waiting for <%= @bookings.first.listing.user.first_name + " " + @bookings.first.listing.user.last_name%> to confirm your booking</h1>
-
+      <h1 class="main-banner-h1 text-center">Bananas, you hve been denied :|</h1>
+        <% else @bookings.first.status === "unconfirmed" %>
+      <h1 class="main-banner-h1 text-center">Waiting for <% @bookings.first.listing.user.first_name + " " + @bookings.first.listing.user.last_name%> to confirm your booking.</h1>
         <% end %>
 
-
-          <% @bookings.each do |booking|  %>
+      <h2 class="main-banner-h1 text-center"> You are all set up for the biggest adventure of your life</h2>
       <div class="booking-item">
-        <p>Booked by: <%= booking.user.first_name + " " + booking.user.last_name%></p>
-        <p>Trip Name: <%= booking.listing.name %></p>
-        <p>Hosted by: <%= booking.listing.user.first_name + " " +  booking.listing.user.last_name%></p>
-        <p>Status: <%= booking.status  %></p>
-        <p>Booked at: <%= booking.created_at  %></p>
-        <p><% if booking.status == "confirmed" %>
+        <p>Booked by: <%= @bookings.last.user.first_name + " " + @bookings.last.user.last_name%></p>
+        <p>Trip Name: <%= @bookings.last.listing.name %></p>
+        <p>Hosted by: <%= @bookings.last.listing.user.first_name + " " +  @bookings.last.listing.user.last_name%></p>
+        <p>Status: <%= @bookings.last.status  %></p>
+        <p>Booked at: <%= @bookings.last.created_at  %></p>
+
+        <p><% if @bookings.last.status == "confirmed" %>
           <%= link_to "Pay now", payment_path, class: "butten-red-log-in" %>
         <% end %></p>
       </div>
-    <% end %>
     </div>
 </div>
