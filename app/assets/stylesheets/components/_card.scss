@@ -87,3 +87,39 @@
 .button-center-form {
   text-align: center;
 }
+
+.card-review {
+  padding: 60px;
+  padding-top: 40px;
+  padding-left: 40px;
+  box-sizing: 10px;
+  margin-right: 300px;
+  margin-left: 300px;
+  margin-bottom: 25px;
+}
+
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 12px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.cards-container-review {
+  background-color: #272727;
+  box-shadow: 0 0 4px $green;
+  border-radius: 5px;
+  border:  solid $green 1px;
+  animation: ease-out;
+  transition: 0.7s;
+}
+
+.color-gray {
+  color: $third;
+}
+
+.extra-space-review {
+  padding-bottom: 30px;
+}
