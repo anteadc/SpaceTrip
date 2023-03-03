@@ -6,9 +6,13 @@
       <p>Trip Name: <%= booking.listing.name %></p>
       <p>Hosted by: <%= booking.listing.user.first_name + " " +  booking.listing.user.last_name%></p>
       <p>Status: <%= booking.status  %></p>
-      <p>Booked at: <%= booking.created_at  %></p>
+      <p>Booked at: <%= booking.created_at.strftime("%B %d, %Y")  %></p>
+
+      <% if booking.status === "unconfirmed"%>
       <p> <%= link_to "accept", booking_path(booking.id, status: "confirmed"), data: {turbo_method: :patch}, class: "btn btn-primary" %></p>
       <p><%= link_to "decline", booking_path(booking.id, status: "declined"), data: {turbo_method: :patch}, class: "btn btn-danger" %></p>
+      <% end %>
+
 
       </div>
     <% end %>
