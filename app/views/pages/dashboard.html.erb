@@ -22,8 +22,8 @@
         <p>Trip Name: <%= @bookings.last.listing.name %></p>
         <p>Hosted by: <%= @bookings.last.listing.user.first_name + " " +  @bookings.last.listing.user.last_name%></p>
         <p>Status: <%= @bookings.last.status  %></p>
-        <p>Booked at: <%= @bookings.last.created_at  %></p>
-
+        <p>Booked on: <%= @bookings.last.created_at.strftime("%B %d, %Y")  %></p>
+        <p>Departure: <%= @bookings.last.listing.depart_date.strftime("%B %d, %Y")%></p>
         <p><% if @bookings.last.status == "confirmed" %>
           <%= link_to "Pay now", payment_path, class: "butten-red-log-in" %>
         <% end %></p>
