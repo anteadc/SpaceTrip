@@ -50,6 +50,25 @@
   <% @icon_names = ["user-astronaut", "rocket", "satellite", "star", "meteor", "globe", "carrot", "rocket", "satellite", "robot", "meteor", "globe", "satellite", "star", "meteor", "globe"] %>
 
 
+  <div class="row mt-5">
+
+
+<div class="col-8">
+      <div class="listing-description-card mt-4">
+        <p><i class="fas fa-info"></i>  <%= @listing.description  %></p>
+      </div>
+    </div>
+
+
+
+    <div class="col-4">
+      <% if current_user.photo.attached? %>
+       <%= cl_image_tag @listing.user.photo.key, class:"avatar" %>
+      <% else %>
+        <%= cl_image_tag @listing.user.photo.key, class:"avatar" %>
+      <% end %>
+      <p><%= @listing.user.bio %></p>
+
   <div class="col-8">
     <ul class="list-features">
       <% @listing.features.each_with_index do |feature, index| %>

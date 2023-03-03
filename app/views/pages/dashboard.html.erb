@@ -2,8 +2,19 @@
 
 <div class="main-banner2">
     <div class="titles-banner">
+        <% if @bookings.first.status === "confirmed" %>
       <h1 class="main-banner-h1 text-center">Congratulations!</h1>
       <h2 class="main-banner-h1 text-center"> You are all set up for the biggest adventure of your life</h2>
+
+        <% elsif @bookings.first.status === "declined" %>
+      <h1 class="main-banner-h1 text-center">Bananas, you have been denied :|</h1>
+
+        <% elsif @bookings.first.status === "unconfirmed" %>
+      <h1 class="main-banner-h1 text-center">Waiting for <%= @bookings.first.listing.user.first_name + " " + @bookings.first.listing.user.last_name%> to confirm your booking</h1>
+
+        <% end %>
+
+
           <% @bookings.each do |booking|  %>
       <div class="booking-item">
         <p>Booked by: <%= booking.user.first_name + " " + booking.user.last_name%></p>
