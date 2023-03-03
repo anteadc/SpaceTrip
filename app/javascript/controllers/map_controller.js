@@ -11,7 +11,9 @@ export default class extends Controller {
 
     this.map = new mapboxgl.Map({
       container: this.element,
-      style: "mapbox://styles/anteadc/clep0cuj800dy01pvckhdg4hw"
+      style: "mapbox://styles/anteadc/clerwxbcx000201qralgruvj9"
+
+
     })
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
@@ -19,7 +21,9 @@ export default class extends Controller {
 
 
   #addMarkersToMap() {
-    new mapboxgl.Marker()
+    const el = document.createElement('div');
+    el.className = 'marker';
+    new mapboxgl.Marker(el)
       .setLngLat([ this.markerValue.lng, this.markerValue.lat ])
       .addTo(this.map)
   }

@@ -17,10 +17,26 @@ label {
   color: white;
 }
 
+// html {
+//   // cursor: pointer;
+//   cursor: url("cursor.png"), crosshair, auto;
+//   // animation: ease;
+//   // transition: 0.7s;
+//   min-height: ;
+
+// }
+
 body {
-cursor: url("Layer 2.png"), auto;
+  cursor: asset-url("cursor.png"), auto;
+  transition: cursor 0.7s ease;
+
 }
 
-a {
-  cursor: url("Layer 1.png"), auto;
+html {
+  min-height: 100%;
+  cursor: asset-url("cursor.png"), auto;
+}
+
+a, .navbar li:hover, .button:hover, .btn, .btn-red:hover, .form {
+  cursor: asset-url("cursor-hover.png"), auto;
 }
